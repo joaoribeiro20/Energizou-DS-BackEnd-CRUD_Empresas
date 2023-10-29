@@ -9,11 +9,8 @@ export class AllSearch{
             const newEmpresa = await newEmpresaRepository.find({})
             
             console.log(newEmpresa)
-
-    
           
             return res.status(201).json(newEmpresa)
-
         }catch (error){
             console.log(error)
             return res.status(500).json({ message: 'Internal Serve Error'})

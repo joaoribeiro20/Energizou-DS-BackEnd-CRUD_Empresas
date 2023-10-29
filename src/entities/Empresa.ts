@@ -16,8 +16,9 @@ export class Empresa {
     @Column({ type: 'text' })
     nomeEmpresa: String
 
-    @Column({ type: 'varchar' })
-    cnpj: Number
+    @Column({ type: 'int' })
+    
+    cnpj: string | Number
 
     @Column({ type: 'varchar' })
     cep: number
@@ -29,7 +30,7 @@ export class Empresa {
     numero: number
 
     @Column({ type: 'varchar' })
-    telefone: number
+    telefone: String
 
     @Column({ type: 'text' })
     email: string

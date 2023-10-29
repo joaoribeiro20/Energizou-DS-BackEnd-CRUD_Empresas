@@ -16,6 +16,8 @@ export class NemEmpresa{
             email
         } = req.body
 
+
+
         if(!nomeCliente){
             return res.status(400).json({ message: 'O nome é obrigatório'})
         }
@@ -33,7 +35,6 @@ export class NemEmpresa{
                 telefone,
                 email
             })
-
 
             console.log(newEmpresa)
 
