@@ -1,17 +1,13 @@
 import { Request, Response } from "express";
 import { newEmpresaRepository } from "../repositories/newEmpresaRepository";
 
-export class DeleteEmpresa{
-    async deleteEmpresa(req: Request, res: Response){
-        const { nameEmpresa } = req.params
-
+export class DeleteCompany{
+    async deleteCompany(req: Request, res: Response){
+        const { cnpj } = req.params
+console.log(cnpj)
         try{
-        let numeroA = nameEmpresa.match(/[0-9]+/g)
-        const numeroComoString = numeroA?.join('');
        
-        console.log(Number(numeroComoString))
-
-       let empresa = await newEmpresaRepository.findOneBy({ cnpj: Number(numeroComoString)  })
+       let empresa = await newEmpresaRepository.findOneBy({ cnpj: cnpj})
 
        if(empresa){
           const newEmpresa = await newEmpresaRepository.delete(empresa.id) 

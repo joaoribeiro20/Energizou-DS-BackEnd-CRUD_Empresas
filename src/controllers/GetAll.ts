@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { newEmpresaRepository } from "../repositories/newEmpresaRepository";
 
 export class AllSearch{
-    async AllEmpresa(req: Request, res: Response){
+    async getAll(req: Request, res: Response){
 
         try{
 

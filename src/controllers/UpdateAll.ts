@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import { newEmpresaRepository } from "../repositories/newEmpresaRepository";
 
 export class UpdateDados{
-    async UpdateD(req: Request, res: Response){
-        const { nameEmpresa } = req.params
+    async UpdateAll(req: Request, res: Response){
+        const { cnpjParams } = req.params
         const {
             nomeCliente,
             senha,
@@ -30,12 +30,8 @@ export class UpdateDados{
             email:email,
           };
           
-          let numeroA = nameEmpresa.match(/[0-9]+/g)
-          const numeroComoString = numeroA?.join('');
          
-          console.log(Number(numeroComoString))
-
-         let empresa = await newEmpresaRepository.findOneBy({ cnpj: Number(numeroComoString)  })
+         let empresa = await newEmpresaRepository.findOneBy({ cnpj:cnpjParams  })
 
          if(empresa){
             const newEmpresa = await newEmpresaRepository.update(empresa.id, UpdateEmpresa) 

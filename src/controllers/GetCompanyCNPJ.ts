@@ -3,16 +3,13 @@ import { newEmpresaRepository } from "../repositories/newEmpresaRepository";
 
 export class SearchCnpj {
     async SearchCnpj(req: Request, res: Response) {
-        const { cnpjA } = req.params
+        const { cnpj } = req.params
+        console.log(cnpj)
         try {
-            let numeroA = cnpjA.match(/[0-9]+/g)
-            const numeroComoString = numeroA?.join('');
+        
+            const newEmpresa = await newEmpresaRepository.findOneBy({ cnpj:cnpj})
            
-            console.log(Number(numeroComoString))
-
-            const newEmpresa = await newEmpresaRepository.findOneBy({ cnpj: Number(numeroComoString)  })
-           
-            console.log(newEmpresa?.nomeEmpresa)
+            console.log(newEmpresa?.cnpj)
 
             return res.status(201).json(newEmpresa)
 
