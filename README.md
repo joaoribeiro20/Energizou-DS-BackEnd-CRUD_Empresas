@@ -1,10 +1,5 @@
 # Energizou-DS-BackEnd-CRUD_Empresas
 
-
-[![Build status](https://github.com/puppeteer/puppeteer/workflows/CI/badge.svg)](https://github.com/joaoribeiro20/Energizou-DS-BackEnd-CRUD_Empresas)
-[![npm puppeteer package](https://img.shields.io/npm/v/puppeteer.svg)](https://npmjs.org/package/puppeteer)
-
-
 ## Overview
 
 Essa aplicação tem como motivação o desefio proposto pela empresa EZERGIZOU, com principais objetos desenvolver um sistema de gerenciamneto de empresas. 
@@ -54,7 +49,7 @@ $ npm run dev
 # O servidor inciará na porta:8088 - acesse <http://localhost:8088>
 ```
 
-# 🗒️ Roadmap - Function
+## 🗒️ Roadmap - Function
 
 - [x]  Criar uma nova empresa.
 - [x]  Listar todas as empresas cadastradas.
