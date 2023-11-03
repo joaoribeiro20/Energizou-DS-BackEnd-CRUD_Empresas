@@ -59,7 +59,7 @@ $ npm run dev
 
 ## 📍endpoints
 
-### Criar uma nova empresa.
+## Criar uma nova empresa.
 
 **method : POST**
 
@@ -99,7 +99,7 @@ telefone = (00)000000000
 201 Created
 ```
 
-### Listar todas as empresas cadastradas.
+## Listar todas as empresas cadastradas.
 
 **method : GET**
 
@@ -137,7 +137,7 @@ http://localhost:8088/allSearch
 ]
 ```
 
-### Consultar uma empresa específica por CNPJ.
+## Consultar uma empresa específica por CNPJ.
 
 **method : GET**
 
@@ -163,7 +163,7 @@ http://localhost:8088/Searchcpnj/:cnpj
 }
 ```
 
-### Atualizar os dados de uma empresa.
+## Atualizar os dados de uma empresa.
 
 **method : PUT**
 
@@ -171,7 +171,7 @@ http://localhost:8088/Searchcpnj/:cnpj
 http://localhost:8088/UpdateAll/:cnpjParams
 ```
 
-### Excluir uma empresa.
+## Excluir uma empresa.
 
 **method : DELETE**
 
