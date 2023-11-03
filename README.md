@@ -30,15 +30,16 @@ $ cd Energizou-DS-BackEnd-CRUD_Empresas
 # Instale as dependências
 $ npm install
 
-#Acesse o Arquivo data-source.ts para configurar informaçoes 
+#Acesse o .env para configurar informaçoes 
 sobre o seu banco de dados MySQL
 
-  type: "mysql",
-	host: ,
-	port: ,
-	username: ,
-	password:,
-	database: 
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASS=
+DB_NAME=
+
+PORT=
 
 # Execute o comando para rodar a migrations  
 npm run migration:run
@@ -57,7 +58,7 @@ $ npm run dev
 - [x]  Atualizar os dados de uma empresa.
 - [x]  Excluir uma empresa.
 
-## 📍endpoints
+# 📍endpoints
 
 ## Criar uma nova empresa.
 
@@ -67,22 +68,12 @@ $ npm run dev
 http://localhost:8088/NewCompany
 ```
 
-Request 
-
-É necessario enviar no body da request dados como no exemplo a baixo
-
-Campos como CEP, CNPJ EMAIL e TELEFONE podem ser enviado com a formatação
-
-CEP =  "01001-000"
-
-CPNJ = 00**.** 000**.** 000**/0001-00**
-
-telefone = (00)000000000
+É necessário enviar no body da request dados como no exemplo a baixo. Campos como CEP, CNPJ EMAIL e TELEFONE podem ser enviado com a formatação CEP =  "00000-000" CPNJ = 00**.** 000**.** 000**/0001-00** telefone = (00)000000000
 
 ```xml
 {
     "nomeCliente": "Joao",
-    "senha": 21,
+    "senha": 55233,
     "nomeEmpresa": "Company Ribeiro",
     "cnpj": 00.000.000/0001-00,
     "cep": 00000-000,
@@ -93,7 +84,7 @@ telefone = (00)000000000
 }
 ```
 
-**Formato de Retorno**
+**Formato do Retorno**
 
 ```xml
 201 Created
@@ -107,13 +98,13 @@ telefone = (00)000000000
 http://localhost:8088/allSearch
 ```
 
-**Formato de Retorno**
+**Formato do Retorno**
 
 ```xml
 [
 		{
 		    "nomeCliente": "Vitor",
-		    "senha": 21,
+		    "senha": 5523,
 		    "nomeEmpresa": "IT Alves",
 		    "cnpj": 00.000.000/0001-00,
 		    "cep": 00000-000,
@@ -124,7 +115,7 @@ http://localhost:8088/allSearch
 		}
 		{
 		    "nomeCliente": "Joao",
-		    "senha": 21,
+		    "senha": 55233,
 		    "nomeEmpresa": "Company Ribeiro",
 		    "cnpj": 00.000.000/0001-00,
 		    "cep": 00000-000,
@@ -141,7 +132,7 @@ http://localhost:8088/allSearch
 
 **method : GET**
 
-Para acessar os dados de uma empresa especifica é necessario informa um CNPJ no formato de **{14}** dígitos SEM outras caracteres, apenas as numéricas por exemplo: "01220330000130". Após o Searchcpnj/
+Para acessar os dados de uma empresa especifica é necessário informa um CNPJ no formato de **{14}** dígitos SEM outras caracteres, apenas as numéricas por exemplo: "01220330000130". Após o Searchcpnj/
 
 ```xml
 http://localhost:8088/Searchcpnj/:cnpj
@@ -152,7 +143,7 @@ http://localhost:8088/Searchcpnj/:cnpj
 ```xml
 {
     "nomeCliente": "Joao",
-    "senha": 21,
+    "senha": 55233,
     "nomeEmpresa": "Company Ribeiro",
     "cnpj": 00.000.000/0001-00,
     "cep": 00000-000,
@@ -167,14 +158,50 @@ http://localhost:8088/Searchcpnj/:cnpj
 
 **method : PUT**
 
+Para editar os dados de uma empresa especifica é necessário informa um CNPJ no formato de **{14}** dígitos SEM outras caracteres, apenas as numéricas por exemplo: "01220330000130" e também enviar no body os dados alterados. 
+
 ```xml
 http://localhost:8088/UpdateAll/:cnpjParams
+```
+
+Formado de envido do body
+
+```xml
+{
+    "nomeCliente": "PessoaTeste",
+    "senha": 33422,
+    "nomeEmpresa": "Company Ribeiro",
+    "cnpj": 00.000.000/0001-00,
+    "cep": 00000-000,
+    "endereco": "rua teste",
+    "numero": 22,
+    "telefone": (11)000000000,
+    "email": "jvalves@gmail,.com"
+}
+```
+
+**Formato de Retorno**
+
+```xml
+200 - Dados da empresa atualizado
+
+404 - Empresa Não encontrada
 ```
 
 ## Excluir uma empresa.
 
 **method : DELETE**
 
+Para deletar uma empresa especifica é necessário informa um CNPJ no formato de **{14}** dígitos SEM outras caracteres, apenas as numéricas por exemplo: "01220330000130". Após o /DeleteCompany/
+
 ```xml
-http://localhost:8088/:cnpj
+http://localhost:8088/DeleteCompany/:cnpj
+```
+
+**Formato de Retorno**
+
+```xml
+200 - Dados da empresa atualizado
+
+404 - Empresa Não encontrada
 ```
