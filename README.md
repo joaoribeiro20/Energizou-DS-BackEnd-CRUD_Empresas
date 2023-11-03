@@ -30,15 +30,16 @@ $ cd Energizou-DS-BackEnd-CRUD_Empresas
 # Instale as dependências
 $ npm install
 
-#Acesse o Arquivo data-source.ts para configurar informaçoes 
+#Acesse o .env para configurar informaçoes 
 sobre o seu banco de dados MySQL
 
-  type: "mysql",
-	host: ,
-	port: ,
-	username: ,
-	password:,
-	database: 
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASS=
+DB_NAME=
+
+PORT=
 
 # Execute o comando para rodar a migrations  
 npm run migration:run
