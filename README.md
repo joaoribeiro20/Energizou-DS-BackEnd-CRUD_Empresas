@@ -2,7 +2,7 @@
 
 ## Overview
 
-Essa aplicação tem como motivação o desefio proposto pela empresa EZERGIZOU, com principais objetos desenvolver um sistema de gerenciamneto de empresas. 
+Esta aplicação tem como motivação o desafio proposto pela empresa ENERGIZOU, com o principal objetivo de desenvolver um sistema de gerenciamento de empresas. 
 
 ### 🛠 Tools
 
