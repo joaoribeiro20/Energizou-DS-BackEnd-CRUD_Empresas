@@ -1,6 +1,5 @@
 # Energizou-DS-BackEnd-CRUD_Empresas
 
-# Puppeteer
 
 [![Build status](https://github.com/puppeteer/puppeteer/workflows/CI/badge.svg)](https://github.com/joaoribeiro20/Energizou-DS-BackEnd-CRUD_Empresas)
 [![npm puppeteer package](https://img.shields.io/npm/v/puppeteer.svg)](https://npmjs.org/package/puppeteer)
