@@ -7,7 +7,7 @@ export class DeleteCompany{
 console.log(cnpj)
         try{
        
-       let empresa = await newEmpresaRepository.findOneBy({ cnpj: cnpj})
+       let empresa = await newEmpresaRepository.findOneBy({ cnpj: cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5') })
 
        if(empresa){
           const newEmpresa = await newEmpresaRepository.delete(empresa.id) 

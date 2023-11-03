@@ -11,7 +11,7 @@ export class SearchCnpj {
            
             console.log(newEmpresa?.cnpj)
 
-            return res.status(201).json(newEmpresa)
+            return res.status(200).json(newEmpresa)
 
         } catch (error) {
             console.log(error)

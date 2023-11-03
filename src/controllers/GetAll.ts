@@ -10,7 +10,7 @@ export class AllSearch{
             
             console.log(newEmpresa)
           
-            return res.status(201).json(newEmpresa)
+            return res.status(200).json(newEmpresa)
         }catch (error){
             console.log(error)
             return res.status(500).json({ message: 'Internal Serve Error'})

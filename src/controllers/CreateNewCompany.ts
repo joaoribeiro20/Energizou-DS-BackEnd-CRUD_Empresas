@@ -48,10 +48,10 @@ export class NemEmpresa {
                 newEmpresa.cnpj = cnpj.replace(/\D/g, '');
                 newEmpresa.cep = cep.replace(/\D/g, '');
                 await newEmpresaRepository.save(newEmpresa)
-                return res.status(201).json(newEmpresa)
+                return res.status(201).json('Created')
             } else {
                 console.log(erro)
-                return res.status(500).json(erro)
+                return res.status(400).json(erro)
             }
 
         } catch (error) {
