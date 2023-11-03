@@ -23,7 +23,25 @@ export class NemEmpresa {
             erro.push('nome invalido')
 
         }
+        const telefoneValidar = (a:string) =>{
+            return a.replace(/\D/g, '')
+        }
+        console.log(telefoneValidar(telefone).length)
+        if (telefoneValidar(telefone).length <= 9) {
+            erro.push('telefone invalido')
+        }
 
+        const isEmailValid = (email:string) => {
+            const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+            if(regex.test(email)){
+              return email
+            }else{
+              return null
+            }
+          };
+          if(isEmailValid(email) === null){
+            erro.push('Email invalido')
+          }
         if (cnpj.length <= 17) {
             erro.push('cnpj invalido')
         }
